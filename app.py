@@ -366,10 +366,11 @@ if master_file and system_file:
 
     except Exception as e:
         st.error(f"⚠️ Technical Error: {e}")
-        st.info("Ensure your columns are named exactly: 'MANAGED_ELEMENT_ID', 'ALIAS_NAME', 'NodeID', 'RouterName'")
+        st.info("Ensure your columns are named exactly: 'MANAGED_ELEMENT_ID', 'ALIAS_NAME', 'NodeID', 'EUtranCellFDD'")
 
     except Exception as e:
         st.error(f"⚠️ Critical Error: {e}")
 
 else:
     st.info("👋 **Welcome Teams.** Upload files to begin the parameters check.")
+
