@@ -12,17 +12,30 @@ st.set_page_config(
 # --- 2. PROFESSIONAL STYLING (CSS) ---
 st.markdown("""
     <style>
-    .main { background-color: #f8fafc; }
+    /* Main background */
+    .stApp {
+        background-color: #f8fafc;
+    }
+    /* Metric Card Styling */
+    [data-testid="stMetricValue"] {
+        font-size: 2rem;
+        color: #1e3a8a;
+    }
     .stMetric {
         background-color: #ffffff;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         border: 1px solid #e2e8f0;
     }
-    h1 { color: #1e3a8a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    /* Title Styling */
+    h1 {
+        color: #1e3a8a;
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+    }
     </style>
-    """, unsafe_allow_value=True)
+    """, unsafe_allow_html=True) # <-- Fixed parameter name here
 
 # --- 3. SIDEBAR / UPLOAD CENTER ---
 with st.sidebar:
@@ -117,4 +130,5 @@ else:
                 st.dataframe(ghost_entries, use_container_width=True)
 
     except Exception as e:
+
         st.error(f"Critical Error: {e}")
